@@ -30,7 +30,7 @@ function get_sign($appSecret, $orderParam)
     return strtolower(md5($signOriginStr . "app_secret=" . $appSecret));
 }
 
-function http_request($url, $method = 'GET', $params = [])
+function http_request($url, $method = 'GET', $params = array())
 {
     $curl = curl_init();
     if ($method == 'POST') {
@@ -47,7 +47,7 @@ function http_request($url, $method = 'GET', $params = [])
     curl_setopt($curl, CURLOPT_TIMEOUT, 60);
     $output = curl_exec($curl);
     if (curl_errno($curl) > 0) {
-        return [];
+        return array();
     }
     curl_close($curl);
     $json = json_decode($output, true);
