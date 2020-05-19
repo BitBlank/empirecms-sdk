@@ -57,6 +57,9 @@ function http_request($url, $method = 'GET', $params = array())
 $order_id = $ddno ? $ddno : time();
 esetcookie("checkpaysession", $order_id, 0);
 $phome = $_POST['phome'];
+if (is_null($phome) || $phome == '') {
+    $phome = getcvar('payphome');
+}
 if (!in_array($phome, array('PayToFen', 'PayToMoney', 'ShopPay', 'BuyGroupPay'))) {
     printerror('您来自的链接不存在', '', 1, 0, 1);
 }
