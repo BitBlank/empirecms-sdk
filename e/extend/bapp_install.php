@@ -21,7 +21,7 @@ if ($payr) {
     l(json_encode($payr));
     l('B.app插件已经成功安装');
 } else {
-    $res = $empire->query("insert into {$dbtbpre}enewspayapi set paytype='$paytype',myorder=0,payfee='0',payuser='bapp app key',partner='',paykey='bapp app secret',paylogo='https://cdn.fwtqo.cn/static/img/20190613_48.png',paysay='B.app操作簡單，掃一掃即可完成支付，免礦工費，支持大額支付',payname='B.app',isclose=0,payemail='',paymethod=0");
+    $res = $empire->query("insert into {$dbtbpre}enewspayapi set paytype='$paytype',myorder=0,payfee='0',payuser='bapp app key',partner='',paykey='bapp app secret',paylogo='https://cdn.rctsnwr.cn/static/img/20190613_48.png',paysay='B.app操作簡單，掃一掃即可完成支付，免礦工費，支持大額支付',payname='B.app',isclose=0,payemail='',paymethod=0");
     l('B.app插件安装结果:' . json_encode($res));
 }
 
